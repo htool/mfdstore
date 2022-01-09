@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+<HEAD>
+    <META content="IE=11.0000" http-equiv="X-UA-Compatible">
+    <meta http-equiv="refresh" content="900" />
+    <META charset="utf-8">
+    <META name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <META name="navico-store" content="mfd-insight-store">
+    <TITLE>
+        Lepelaar cockpit dashboard
+    </TITLE>
+    <link rel="stylesheet" href="/Content/navigation.css">
+</HEAD>
+
+<BODY>
+
+<div class="topnav" id="myTopnav">
+  <a href="main.html" target="iframe_a" >Main</a>
+  <a href="http://mfdstore.navico.com:3003/" target="iframe_a">NavTex</a>
+  <a href="http://mfdstore.navico.com:3005/" target="iframe_a">Weather</a>
+  <a href="http://mfdstore.navico.com:3000/" target="iframe_a">SignalK</a>
+  <a href="windy.html" target="iframe_a">Windy</a>
+  <a href="/SailSteer/" target="iframe_a">SailSteer</a>
+  <a href="http://www.zeilersforum.nl/" target="iframe_a">Zeilersforum</a>
+  <a style="float:right" href="javascript:void(0);" onclick="javascript:window.open('','_self').close()">Exit</a>
+</div>
+
+
+<script>
+onload = function()
+{
+ document.from.document.body.style.fontFamily = "'Menlo', 'Consolas', 'Lucida Console', 'Liberation Mono'"
+}
+</script>
+
+<iframe src="main.html" name="iframe_a" style="height: 690px; width: 100%;" style="border:none;" style="font-family: 'Menlo', 'Consolas', 'Lucida Console', 'Liberation Mono';"></iframe>
+
+</BODY>
+</HTML>

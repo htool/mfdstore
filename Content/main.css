@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Monaco';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Monaco'), url('https://mdfstore.navico.com/Content/Monaco.woff') format('woff');
+}
+
+body {
+  background-color: white;
+  font-family: 'Monaco', sans-serif;
+  font-size: large;
+ }
+
