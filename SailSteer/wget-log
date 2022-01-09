@@ -1,0 +1,11 @@
+--2022-01-09 12:17:10--  https://www.bandg.com/globalassets/bandg/blog/sailsteer/screenshot_2018-10-24_13.26.18.png?w=480
+Resolving www.bandg.com (www.bandg.com)... 104.17.199.184, 104.17.198.184, 2606:4700::6811:c6b8, ...
+Connecting to www.bandg.com (www.bandg.com)|104.17.199.184|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 66314 (65K) [image/png]
+Saving to: ‘screenshot_2018-10-24_13.26.18.png?w=480’
+
+screenshot_2018-10-24_13.26.18.png?w=480      0%[                                                                                         ]       0  --.-KB/s               screenshot_2018-10-24_13.26.18.png?w=480    100%[========================================================================================>]  64,76K  --.-KB/s    in 0,02s   
+
+2022-01-09 12:17:10 (3,82 MB/s) - ‘screenshot_2018-10-24_13.26.18.png?w=480’ saved [66314/66314]
+
