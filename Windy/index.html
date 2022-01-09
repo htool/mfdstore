@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+<HEAD>
+    <META http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <META http-equiv="Pragma" content="no-cache" />
+    <META http-equiv="Expires" content="0" />
+    <META content="IE=11.0000" http-equiv="X-UA-Compatible">
+    <META charset="utf-8">
+    <META name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <META name="navico-store" content="mfd-insight-store">
+    <link rel="stylesheet" href="/Content/main.css">
+</HEAD>
+
+<BODY>
+
+<script>
+const width = 1250;
+const height = 680;
+const zoom = 9;
+
+const userAction = async () => {
+  const response = await fetch('http://mfdstore.navico.com:3000/signalk/v1/api/vessels/self/navigation/position/value/');
+  const myJson = await response.json(); //extract JSON from the http response
+  const longitude = myJson.longitude;
+  const latitude = myJson.latitude;
+  const url = `https://embed.windy.com/embed2.html?lat=${latitude}&lon=${longitude}&detailLat=${latitude}&detailLon=${longitude}&width=${width}&heigth=${height}&zoom=${zoom}&level=surface&overlay=wind&product=ecmwf&menu=&message=true&marker=&calendar=24&pressure=true&type=map&location=coordinates&detail=true&metricWind=m%2Fs&metricTemp=%C2%B0C&radarRange=-1`;
+  document.write(`<iframe width="${width}" heigth="${heigth}" src="${url}" frameborder="0"></frame>`);
+}
+</script>
+
+</BODY>
+</HTML>
