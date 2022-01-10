@@ -18,16 +18,15 @@ const height = 680;
 const zoom = 9;
 
 async function asyncData() {
-  // const response = await fetch('http://mfdstore.navico.com:3000/signalk/v1/api/vessels/self/navigation/position/value/');
-  const response = await fetch('http://192.168.1.95:3000/signalk/v1/api/vessels/self/navigation/position/value/');
+  const response = await fetch('http://mfdstore.navico.com:3000/signalk/v1/api/vessels/self/navigation/position/value/');
   const result = await response.json(); //extract JSON from the http response
 
   console.log("Result: " + result);
   const longitude = result.longitude;
-  const latitude = result.latitude;
+  const latitude = result.latitude - 1;
   console.log("lon: " + longitude + " lat: " + latitude);
 
-  let url = `https://embed.windy.com/embed2.html?lat=${latitude}&lon=${longitude}&detailLat=${latitude}&detailLon=${longitude}&width=${width}&height=${height}&zoom=${zoom}&level=surface&overlay=wind&product=ecmwf&menu=&message=true&marker=&calendar=24&pressure=true&type=map&location=coordinates&detail=true&metricWind=m%2Fs&metricTemp=%C2%B0C&radarRange=-1`;
+  let url = `https://embed.windy.com/embed2.html?lat=${latitude}&lon=${longitude}&detailLat=${latitude}&detailLon=${longitude}&width=${width}&height=${height}&zoom=${zoom}&level=surface&overlay=wind&product=ecmwf&menu=&message=true&marker=&calendar=24&pressure=true&type=map&location=coordinates&detail=false&metricWind=m%2Fs&metricTemp=%C2%B0C&radarRange=-1`;
   let html = "<iframe width=\"" + width + "\" height=\"" + height + "\" src=\"" + url + "\" frameborder=\"0\"></frame>";
 
   let container = document.querySelector('.container');
