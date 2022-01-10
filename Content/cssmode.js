@@ -1,18 +1,11 @@
-  const http = require('http');
-  http.get('http://localhost:3000/signalk/v1/api/vessels/self/environment/mode/value/', (resp) => {
-    let data = '';
-
-    // A chunk of data has been received.
-    resp.on('data', (chunk) => {
-      data += chunk;
-    });
-
-    resp.on('end', () => {
-      cssmode = data.replace(/['" ]+/g, '');
-      console.log("cssmode: " + cssmode);
-    });
-
-    }).on("error", (err) => {
-      console.log("Error: " + err.message);
-    });
-  document.getElementsByTagName("head")[0].appendChild('<link href="/Content/${cssmode}.css" rel="stylesheet" type="text/css" />');
+async function asyncData() {
+  const response = await fetch('http://mfdstore.navico.com:3000/signalk/v1/api/vessels/self/environment/mode/value/');
+  const dayOrNight = await response.json(); //extract JSON from the http response
+  console.log("dayOrNight: " + dayOrNight);
+  var cssmode = document.createElement('link');
+  cssmode.type = 'text/css';
+  cssmode.rel = 'stylesheet';
+  cssmode.href = '/Content/cssmode_' + dayOrNight + '.css';
+  document.head.appendChild(cssmode);
+}
+asyncData();

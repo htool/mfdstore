@@ -1,8 +1,16 @@
-body {
-  background-color: black;
-  font-family: 'Monaco', 'Menlo', 'Consolas', 'Lucida Console', 'Liberation Mono';
- }
+@font-face {
+    font-family: 'Monaco';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Monaco'), url('http://mfdstore.navico.com/Content/Monaco.woff') format('woff');
+}
 
+body {
+  background-color: white;
+  color: black;
+  font-family: 'Monaco', Helvetica, Arial, sans-serif;
+  font-size: large;
+ }
 
 /* Add a black background color to the top navigation */
 .topnav {
