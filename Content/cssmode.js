@@ -5,7 +5,7 @@ async function asyncData() {
   var cssmode = document.createElement('link');
   cssmode.type = 'text/css';
   cssmode.rel = 'stylesheet';
-  cssmode.href = '/Content/cssmode_' + dayOrNight + '.css?ver=1.0';
+  cssmode.href = '/Content/cssmode_' + dayOrNight + '.css?ver=' + Math.floor(Math.random() * 100);
   document.head.appendChild(cssmode);
 }
 asyncData();
